@@ -27,18 +27,37 @@ Therefore, D flip-flop always Hold the information, which is available on data i
 Next state of D flip-flop is always equal to data input, D for every positive transition of the clock signal. Hence, D flip-flops can be used in registers, shift registers and some of the counters.
 
 **Procedure**
+1.Type the program in Quartus software.
 
-/* write all the steps invloved */
+2.Compile and run the program.
+
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram.
 
 **PROGRAM**
-
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
-
+```
+module dflipflop(D,Clock,reset,Q);
+input D,reset,Clock;
+output reg Q;
+always @ (negedge Clock)
+if(!reset)
+Q <= 0;
+else
+Q <= D;
+endmodule
+```
 **RTL LOGIC FOR FLIPFLOPS**
 
+![328144898-c4b0f559-b5c0-4968-aa38-049e44c65fe2](https://github.com/user-attachments/assets/a9b145c0-e877-4ffa-8486-ff10db75ff4e)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![328144960-47487dc8-17fd-43a0-96fa-8ebde9d670cd](https://github.com/user-attachments/assets/a20a0125-a48a-436a-b847-6a47bbc03e4d)
 
 **RESULTS**
+Thus the program to implement a D flipflop using verilog and validating their functionality using their functional tables
+
+
